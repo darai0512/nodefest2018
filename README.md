@@ -8,6 +8,7 @@ by darai0512
 
 <ul>
 <li style="font-size: 32px">slide https://darai0512.github.io/nodefest2018/index.html#/</li>
+<li style="font-size: 32px">twitter https://twitter.com/darai_0512</li>
 </ul>
 
 ---
@@ -54,7 +55,7 @@ ex, 昔(v0.10)よりmicroTaskQueueとか非同期パターンが多くて大変
 ---
 
 <!-- .slide: data-background="img/figures/figures.001.jpeg"-->
-<!-- .slide: data-background-size="50%"-->
+<!-- .slide: data-background-size="30%"-->
 <!-- .slide: data-background-repeat="space"-->
 <!-- .slide: data-background-opacity="0.3"-->
 ### 非同期処理が難しい
@@ -107,7 +108,7 @@ Note:
 ---
 
 <!-- .slide: data-background="img/figures/figures.001.jpeg"-->
-<!-- .slide: data-background-size="50%"-->
+<!-- .slide: data-background-size="30%"-->
 <!-- .slide: data-background-repeat="space"-->
 <!-- .slide: data-background-opacity="0.6"-->
 #### 非同期処理の実行順は環境やバージョンで異なりうる

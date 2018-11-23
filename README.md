@@ -6,9 +6,9 @@
 
 by darai0512
 
-- slide link(上: html, 下: pdf):
-- https://darai0512.github.io/nodefest2018/
-- https://speakerdeck.com/darai0512/nodefest2018
+<ul>
+<li style="font-size: 32px">slide https://darai0512.github.io/nodefest2018/index.html#/</li>
+</ul>
 
 ---
 

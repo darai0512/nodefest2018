@@ -7,7 +7,8 @@
 by darai0512
 
 <ul>
-<li style="font-size: 32px">slide https://darai0512.github.io/nodefest2018/index.html#/</li>
+<li style="font-size: 32px">html https://darai0512.github.io/nodefest2018/index.html#/</li>
+<li style="font-size: 32px">pdf https://speakerdeck.com/darai0512/nodefest2018</li>
 <li style="font-size: 32px">twitter https://twitter.com/darai_0512</li>
 </ul>
 

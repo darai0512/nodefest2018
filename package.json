@@ -1,0 +1,23 @@
+{
+  "name": "nodefest2018",
+  "author": "Daiki Arai",
+  "private": true,
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "dependencies": {
+    "emoji-awesome": "0.0.2",
+    "node-fetch": "^2.3.0",
+    "reveal.js": "^3.7.0",
+    "tls-keygen": "^3.6.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "devDependencies": {
+    "ctrace": "^1.1.5",
+    "express": "^4.16.4",
+    "llnode": "2.0.0",
+    "node-report": "^2.2.1"
+  }
+}

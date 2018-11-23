@@ -137,14 +137,14 @@ TODO バックアップ資料で詳細解説
 #### ex2, 直感的ではない挙動(実際にあった例)
 
 ```js
+// 自身のコピーをとり、失敗したらリトライするスクリプト
 const fs = require('fs');
 const backup = `/tmp/backup` + process.argv[2];
 const flag = fs.constants.COPYFILE_EXCL; // copy先ファイルが存在するとError
-// このファイルのコピーをとる
 const cp = (m) => fs.copyFile(__filename, backup, flag, (e) => {
   if (e) return console.error(`(${m} ERROR) ${e.message}`); // コピー失敗時ログ
 });
-
+// メイン処理
 cp('1st');                                // コピー開始
 if (fs.existsSync(backup)) { // コピー先ファイルが出来てたら
   console.log('copied');         // ログを出して終了
@@ -170,7 +170,7 @@ const flag = fs.constants.COPYFILE_EXCL;
 const cp = (m) => fs.copyFile(__filename, backup, flag, (e) => {
   if (e) return console.error(`(${m} ERROR) ${e.message}`);
 });
-
+// メイン処理
 cp('1st'); // existsSyncによるbackupへのaccessとの競走
 if (fs.existsSync(backup)) { // copyFileによるbackupのopenとの競走
   console.log('copied');
@@ -211,8 +211,8 @@ TODO 並列？コピー元は競合しない, フロー制御バージョン（�
 - 非同期I/Oの実行順は不規則
 - 非同期処理では**順番/時間に依存しない設計が重要**
   - callback/Promise/async-awaitなどで確実なフロー制御を
-  - 再現性がないとCIのテストが不安定に...(flaky)
   - 悪い例: setTimeoutでコピーが終わりそうな時間を指定し待つ
+  - 再現性がないとCIのテストが不安定に...(flaky)
 
 ---
 
@@ -233,7 +233,7 @@ TODO 並列？コピー元は競合しない, フロー制御バージョン（�
 - 使い方: `createHook()`に非同期のライフタイム毎にさせたい処理を渡して`enable()`
   - init/destroy: インスタンス生成/破棄時
   - before/after: コールバック前後
-  - promiseResolve: resolve時(thenのreturnも含む)
+  - promiseResolve: resolve時(thenも含む)
 
 ```js
 const ah = require('async_hooks');
@@ -256,6 +256,7 @@ Note:
   - `fs.writeSync(process.stdout.fd, '')`
     - = `fs.writeSync(1, '')`
   - `process._rawDebug('')`
+- promiseResolve: resolve時(thenのreturnも含む)
 
 ---
 
@@ -496,7 +497,6 @@ $node app.js
 Error: 非同期コールバック中に例外発生
     at module.exports (/tmp/wrongModule.js:6:9)
 
-# 将来的には呼び出し元の関数名まで表示されるかも
 $./node-v12.0.0-v8-canaryXXX/bin/node --async-stack-traces app.js
 Error: 非同期コールバック中に例外発生
     at module.exports (/tmp/wrongModule.js:6:9)
